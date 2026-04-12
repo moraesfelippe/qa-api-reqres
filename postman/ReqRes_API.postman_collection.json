@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "57b71597-15b9-4352-b7c1-a062aae68672",
+		"name": "ReqRes API - Testes Manuais",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46324880",
+		"_collection_link": "https://felipe-5131873.postman.co/workspace/Felipe's-Workspace~b3918c1d-c6f2-4248-881b-47a260db96f6/collection/46324880-57b71597-15b9-4352-b7c1-a062aae68672?action=share&source=collection_link&creator=46324880"
+	},
+	"item": [
+		{
+			"name": "Usuários",
+			"item": [
+				{
+					"name": "CT001 - Listar usuários com sucesso",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "pro_db2a56ddb6d7705161e473c6c8123908b23411d2322d5f88b8ba56870068ff94",
+								"type": "text"
+							},
+							{
+								"key": "X-Reqres-Env",
+								"value": "prod",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://reqres.in/api/users?page=1",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CT002 - Buscar usuário específico com sucesso",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "pro_db2a56ddb6d7705161e473c6c8123908b23411d2322d5f88b8ba56870068ff94",
+								"type": "text"
+							},
+							{
+								"key": "X-Reqres-Env",
+								"value": "prod",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://reqres.in/api/users/2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CT003 - Buscar usuário inexistente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "pro_db2a56ddb6d7705161e473c6c8123908b23411d2322d5f88b8ba56870068ff94",
+								"type": "text"
+							},
+							{
+								"key": "X-Reqres-Env",
+								"value": "prod",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://reqres.in/api/users/999",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CT004 - Criar usuário com sucesso",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "pro_db2a56ddb6d7705161e473c6c8123908b23411d2322d5f88b8ba56870068ff94",
+								"type": "text"
+							},
+							{
+								"key": "X-Reqres-Env",
+								"value": "prod",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Felipe\",\r\n  \"job\": \"QA Analyst\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "CT005 - Login com sucesso",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "pro_db2a56ddb6d7705161e473c6c8123908b23411d2322d5f88b8ba56870068ff94",
+								"type": "text"
+							},
+							{
+								"key": "X-Reqres-Env",
+								"value": "prod",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"eve.holt@reqres.in\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/login",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CT006 - Login sem senha",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "pro_db2a56ddb6d7705161e473c6c8123908b23411d2322d5f88b8ba56870068ff94",
+								"type": "text"
+							},
+							{
+								"key": "X-Reqres-Env",
+								"value": "prod",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"eve.holt@reqres.in\"\r\n}"
+						},
+						"url": {
+							"raw": "https://reqres.in/api/login",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CT007 - Login com email inválido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "pro_db2a56ddb6d7705161e473c6c8123908b23411d2322d5f88b8ba56870068ff94",
+								"type": "text"
+							},
+							{
+								"key": "X-Reqres-Env",
+								"value": "prod",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"naoexiste@teste.com\",\r\n  \"password\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "https://reqres.in/api/login",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recursos",
+			"item": []
+		}
+	]
+}
